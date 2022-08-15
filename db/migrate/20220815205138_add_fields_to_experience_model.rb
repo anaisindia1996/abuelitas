@@ -6,6 +6,7 @@ class AddFieldsToExperienceModel < ActiveRecord::Migration[7.0]
     add_column :experiences, :description, :text
     add_column :experiences, :images, :string
     add_column :experiences, :price, :integer
+    add_column :experiences, :location, :string
     add_column :experiences, :latitude, :string
     add_column :experiences, :longitude, :string
   end
