@@ -1,2 +1,6 @@
 <H1>Index of experiences</H1>
-<%= render "shared/navbar" %>
+<%# <%= render "shared/navbar" %> %>
+
+<% @experiences.each do |experience| %>
+<h2>Learn <%= experience.activity_name %> with <%= experience.grandma_name %></h2>
+<% end %>
