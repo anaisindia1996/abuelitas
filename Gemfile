@@ -48,8 +48,11 @@ gem "sassc-rails"
 # Faker for initial data
 gem "faker"
 
-# Cloudinary
+# Dotenv (hides env file)
 gem "dotenv-rails", groups: [:development, :test]
+
+# Cloudinary
+gem "cloudinary"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
