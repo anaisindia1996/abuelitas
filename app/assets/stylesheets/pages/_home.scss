@@ -15,7 +15,7 @@
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 25px;
   color: white;
   opacity: .7;
   padding-bottom: 20px;
@@ -40,13 +40,59 @@
 }
 
 
-.h4 {
+.subheading {
   margin: 0 auto;
   display: flex;
+  font-size: 40px;
+  padding: 35px;
+  text-align: center;
+  justify-content: center;
 }
 
 .explanation ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.details {
+  font-size: 15px;
+  color: black;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 400px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 500px;
+  max-width: 50%;
+  object-fit: cover;
+  border-radius:4px;
+}
+
+.card-product h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .5;
+  margin-bottom: 80px;
+  margin-top: 12px;
+  text-overflow: wrap;
+}
+
+.card-product .card-product-infos {
+  padding: 30px;
+  margin-bottom: 10px;
 }

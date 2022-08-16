@@ -1,28 +1,43 @@
 <%# banner with background %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dbb3sntqk/image/upload/v1660677482/nick-karvounis-og_p3b9bJ7E-unsplash_lr76ie.jpg)">
   <div class="container text-center">
-    <h1>Find an experience with a local grandma</h1>
-    <p>Abuelitas connects you to an abuela to learn and share her wisdom</p>
+    <h1>Discover a new experience with a local grandma</h1>
+    <p>Tell us what you'd like to experience and we'll take care of the rest</p>
     <h5><%= link_to "Find an abuela", experiences_path, class: "button p-3 mt-1" %></h5>
   </div>
 </div>
 <div class="container-fluid bg-white pb-5">
-  <div class="row">
-    <h4 class="text-center py-5">How it works</h4>
+  <h4 class="subheading">How it works</h4>
+  <div class="row px-5">
       <div class="col text-center">
         <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660667117/1752922_bpt8qr.png" style="width:60px">
       <h4 class="py-3">Pick an experience</h4>
+      <p class="details">Browse all our experiences and decide what you want to learn.</p>
       </div>
       <div class="col text-center">
-        <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660667446/2460737_lqhme4.png" style="width:60px">
+        <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660691858/791475_d8e5wz.png" style="width:60px">
       <h4 class="py-3">Book an appointment</h4>
+      <p class="details">Pick the right experience and abuela for you and reserve!</p>
       </div>
       <div class="col text-center">
         <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660667187/3554643_e82nui.png" style="width:60px">
-      <h4 class="py-3">Enjoy your quality time with grandma!</h4>
+      <h4 class="py-3">Enjoy quality time with grandma!</h4>
+      <p class="details">Meet up with abuela for your experience</p>
       </div>
   </div>
 </div>
+<h4 class="subheading">Testimonials</h4>
+<div class="card-product">
+  <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660692745/christian-bowen-TOKVE7PNwAc-unsplash_czk2j1.jpg" />
+  <div class="card-product-infos">
+    <h2>Baking with Mary</h2>
+    <p>My kids never knew their grandma, so it was so special to have Mary teach them how to bake</p>
+    <h5><%= link_to "Find an abuela", experiences_path, class: "button p-3 mt-12" %></h5>
+  </div>
+</div>
+
+
+
 
 
 
