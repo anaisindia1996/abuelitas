@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_15_214106) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_16_163342) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.time "start_time"
+    t.time "end_time"
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "experience_id", null: false
+    t.index ["experience_id"], name: "index_appointments_on_experience_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
 
   create_table "experiences", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,6 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_214106) do
     t.integer "price"
     t.string "latitude"
     t.string "longitude"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "experience_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_reviews_on_experience_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_214106) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "experiences"
+  add_foreign_key "appointments", "users"
+  add_foreign_key "experiences", "users"
+  add_foreign_key "reviews", "experiences"
 end
