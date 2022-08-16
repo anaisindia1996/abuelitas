@@ -7,33 +7,36 @@
 
 .banner h1 {
   margin: 0;
-  color: $pink;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: $white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 60px;
   font-weight: bold;
-  padding: 50px 0;
+  padding: 20px 0;
 }
 
 .banner p {
   font-size: 20px;
   color: white;
   opacity: .7;
+  padding-bottom: 20px;
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.btn {
-  background-color: $light-purple;
+.button {
+  background-color: $pink;
   color: white;
   margin: 0, auto;
   font-size: larger;
-  border-radius: 0px;
+  border-radius: 4px;
   padding: 10px;
+  text-decoration: none;
   border-width: 1px;
-
 }
 
-.btn:hover {
-  color: $purple;
+.button:hover {
+  background-color: none;
+  color: black;
+  transition-duration: 3s;
 }
 
 
