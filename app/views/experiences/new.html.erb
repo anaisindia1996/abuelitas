@@ -1,1 +1,19 @@
-<H1>Creating an new experience</H1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Create a new experience</h1>
+      <%= simple_form_for @experience do |f| %>
+        <%= f.input :grandma_name %>
+        <%= f.input :activity_name %>
+        <%= f.input :availability %>
+        <%= f.input :description %>
+        <%= f.input :images %>
+        <%= f.input :price %>
+        <%= f.input :location %>
+        <%= f.input :latitude %>
+        <%= f.input :longitude %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
