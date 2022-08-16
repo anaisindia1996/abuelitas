@@ -28,6 +28,7 @@
       <%= link_to "Delete this experience",
             @experience,
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+            <%= link_to "Edit this experience", edit_experience_path(@experience)%>
     <% end %>
   <div class="list-group">
         <% @experience.reviews.each do |review| %>
