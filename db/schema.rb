@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_16_163342) do
     t.text "description"
     t.string "images"
     t.integer "price"
+    t.string "location"
     t.string "latitude"
     t.string "longitude"
     t.bigint "user_id", null: false
