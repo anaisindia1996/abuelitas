@@ -1,1 +1,10 @@
-<H1>One experience</H1>
+<div class="text-center container py-5">
+  <H1 class="py-2">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></H1>
+  <h3>Description: <%= @experience.description %> </h3>
+  <h3>Price: $<%= @experience.price %>
+  <h4>Experience available on: <%= @experience.availability %>
+  <h4>Location: <%= @experience.latitude %>, <%= @experience.longitude %> (map to go here)
+</div>
+  <div class="bg-white text-center">
+  <h2 class="py-5">Reviews:</h2>
+  </div>
