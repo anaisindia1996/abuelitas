@@ -7,7 +7,6 @@ class Experience < ApplicationRecord
   validates :activity_name, presence: true
   validates :availability, presence: true
   validates :description, presence: true
-  validates :images, presence: true
   validates :price, presence: true
   validates :location, presence: true
   validates :latitude, presence: true
