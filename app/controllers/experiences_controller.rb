@@ -33,7 +33,7 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience.destroy
-    redirect_to experiences_path(@experience)
+    redirect_to experiences_path, status: :see_other, notice: "Experience was successfully destroyed."
   end
 
   private

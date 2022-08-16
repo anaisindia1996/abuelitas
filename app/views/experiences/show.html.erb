@@ -15,8 +15,12 @@
   <div class="bg-white text-center">
   <h2 class="py-5">Reviews:</h2>
 
- <%= button_to "Destroy this experience", @experience, method: :delete %>
 
+    <%  if @experience.user == current_user %>
+      <%= link_to "Delete this experience",
+            @experience,
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <% end %>
   <div class="list-group">
         <% @experience.reviews.each do |review| %>
           <li class="list-group-item">
