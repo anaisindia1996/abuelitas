@@ -1,8 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @experience.photo.key %>');">
-  <div class="container">
-    <h1 class="text-center text-white">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
+<% if @experience.photo.attached? %>%
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @experience.photo.key %>');">
+    <div class="container">
+      <h1 class="text-center text-white">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
+    </div>
   </div>
-</div>
+  <% else %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg');">
+      <div class="container">
+        <h1 class="text-center text-white">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
+      </div>
+    </div>
+  <% end %>
 <div class="text-center container py-5">
   <H1 class="py-2">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></H1>
   <h3>Description: <%= @experience.description %> </h3>
