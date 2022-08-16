@@ -1,3 +1,4 @@
+Experience.destroy_all
 User.destroy_all
 puts "start creating the users..."
 
@@ -14,7 +15,6 @@ puts "Users have been created!"
 
 @owners = User.all[0..4]
 
-Experience.destroy_all
 
 puts "start creating the Experiences..."
 
