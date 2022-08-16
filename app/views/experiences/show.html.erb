@@ -1,4 +1,4 @@
-<% if @experience.photo.attached? %>%
+<% if @experience.photo.attached? %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @experience.photo.key %>');">
     <div class="container">
       <h1 class="text-center text-white">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
