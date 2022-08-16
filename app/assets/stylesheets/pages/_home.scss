@@ -1,1 +1,49 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: $pink;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  padding: 50px 0;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn {
+  background-color: $light-purple;
+  color: white;
+  margin: 0, auto;
+  font-size: larger;
+  border-radius: 20px;
+  padding: 10px;
+  border-color: $light-pink;
+
+}
+
+.btn:hover {
+  color: $purple;
+}
+
+
+.h4 {
+  margin: 0 auto;
+  display: flex;
+}
+
+.explanation ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
