@@ -5,7 +5,11 @@
         <% @experiences.each do |experience| %>
           <div class="col p-3">
             <div class="card" style="width: 18rem;">
-              <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg" class="card-img-top" alt="Learn <%= experience.activity_name %> with <%= experience.grandma_name %>">
+             <% if experience.photo.attached? %>
+              <%= cl_image_tag experience.photo.key, class: "card-img-top" %>
+                <% else %>
+              <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
+                <% end %>
                 <div class="card-body">
                   <h5 class="card-title">Learn <%= experience.activity_name %> with <%= experience.grandma_name %></h5>
                   <p class="card-text"><%= experience.description %></p>

@@ -1,3 +1,8 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @experience.photo.key %>');">
+  <div class="container">
+    <h1 class="text-center text-white">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
+  </div>
+</div>
 <div class="text-center container py-5">
   <H1 class="py-2">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></H1>
   <h3>Description: <%= @experience.description %> </h3>
@@ -10,8 +15,12 @@
   <div class="bg-white text-center">
   <h2 class="py-5">Reviews:</h2>
 
- <%= button_to "Destroy this experience", @experience, method: :delete %>
 
+    <%  if @experience.user == current_user %>
+      <%= link_to "Delete this experience",
+            @experience,
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <% end %>
   <div class="list-group">
         <% @experience.reviews.each do |review| %>
           <li class="list-group-item">

@@ -33,7 +33,7 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience.destroy
-    redirect_to experiences_path(@experience)
+    redirect_to experiences_path, status: :see_other, notice: "Experience was successfully destroyed."
   end
 
   private
@@ -43,6 +43,6 @@ class ExperiencesController < ApplicationController
   end
 
   def experience_params
-    params.require(:experience).permit(:grandma_name, :activity_name, :availability, :description, :images, :price, :location, :latitude, :longitude)
+    params.require(:experience).permit(:grandma_name, :activity_name, :availability, :description, :photo, :price, :location, :latitude, :longitude)
   end
 end

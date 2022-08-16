@@ -7,11 +7,11 @@
         <%= f.input :activity_name %>
         <%= f.input :availability %>
         <%= f.input :description %>
-        <%= f.input :images %>
         <%= f.input :price %>
         <%= f.input :location %>
         <%= f.input :latitude %>
         <%= f.input :longitude %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>
