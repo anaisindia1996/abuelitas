@@ -1,6 +1,19 @@
 <H1>Index of experiences</H1>
-<%# <%= render "shared/navbar" %> %>
 
-<% @experiences.each do |experience| %>
-<h2>Learn <%= experience.activity_name %> with <%= experience.grandma_name %></h2>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @experiences.each do |experience| %>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= experience.images %>" class="card-img-top" alt="Learn <%= experience.activity_name %> with <%= experience.grandma_name %>">
+            <div class="card-body">
+              <h5 class="card-title">Learn <%= experience.activity_name %> with <%= experience.grandma_name %></h5>
+              <p class="card-text"><%= experience.description %></p>
+              <p class="card-text">Price: $<%= experience.price %></p>
+              <a href="/:id" class="btn btn-primary">learn more</a>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
