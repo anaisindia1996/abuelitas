@@ -28,7 +28,7 @@ class ExperiencesController < ApplicationController
 
   def update
     @experience.update(experience_params)
-    redirect_to experience_path(experience)
+    redirect_to experience_path(@experience)
   end
 
   def destroy
