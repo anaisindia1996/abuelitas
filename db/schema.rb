@@ -23,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_214106) do
     t.text "description"
     t.string "images"
     t.integer "price"
-    t.string "location"
     t.string "latitude"
     t.string "longitude"
   end
