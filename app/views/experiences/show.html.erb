@@ -9,4 +9,32 @@
 </div>
   <div class="bg-white text-center">
   <h2 class="py-5">Reviews:</h2>
+
+ <%= button_to "Destroy this experience", @experience, method: :delete %>
+
+  <div class="list-group">
+        <% @experience.reviews.each do |review| %>
+          <li class="list-group-item">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fa-solid fa-star"></i>
+                <% else %>
+                  <i class="fa-regular fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <p><%= review.content %></p>
+          </li>
+        <% end %>
+      </div>
+
+      <%= simple_form_for [@experience, @review] do |f| %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :content%>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+      <%= link_to "See all experiences", experiences_path %>
   </div>
