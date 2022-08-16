@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to experience_path(@experience)
     else
-      render experience_path(@experience), status: :unprocessable_entity
+      render 'experiences/show', status: :unprocessable_entity
     end
   end
 
