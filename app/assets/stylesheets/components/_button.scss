@@ -1,0 +1,12 @@
+.btn {
+  background-color: $light-purple;
+  color: white;
+  margin: 0, auto;
+  font-size: larger;
+  border-radius: 0px;
+  padding: 10px;
+}
+
+.btn:hover {
+  color: $purple;
+}
