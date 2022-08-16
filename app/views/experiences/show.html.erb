@@ -18,18 +18,16 @@
   <h4 class="pb-5">Experience happening on: <%= @experience.availability %>
   <div style="width: 100%" class="pt-5">
   <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=<%= @experience.latitude %>%,%20<%= @experience.longitude %>+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
-  <%= link_to "Book this experience", '#', class: "btn btn-primary mt-5" %>
+  <%= link_to "Book this experience", '#', class: "btn mt-5 mb-3" %>
+      <%  if @experience.user == current_user %>
+      <p><%= link_to "Delete this experience",
+            @experience,
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
+    <% end %>
 </div>
   <div class="bg-white text-center">
+  <div class="container pb-5">
   <h2 class="py-5">Reviews:</h2>
-
-
-    <%  if @experience.user == current_user %>
-      <%= link_to "Delete this experience",
-            @experience,
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-            <%= link_to "Edit this experience", edit_experience_path(@experience)%>
-    <% end %>
   <div class="list-group">
         <% @experience.reviews.each do |review| %>
           <li class="list-group-item">
@@ -52,7 +50,7 @@
       <%= simple_form_for [@experience, @review] do |f| %>
         <%= f.input :rating, collection: 0..5 %>
         <%= f.input :content%>
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.submit class: 'btn' %>
       <% end %>
-      <%= link_to "See all experiences", experiences_path %>
   </div>
+    </div>
