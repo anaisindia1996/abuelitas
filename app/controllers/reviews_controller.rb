@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  def new
+    @review = Review.new
+    @experience = Experience.find(params[:experience_id])
+  end
+
   def create
     @experience = Experience.find(params[:experience_id])
     @review = Review.new(review_params)
