@@ -13,13 +13,15 @@ class AppointmentsController < ApplicationController
     @appointment.experience_id = @experience
 
     if @appointment.save
-      redirect_to my_experiences_path
+      redirect_to appointments_path
     else
-      render 'appointments/show', status: :unprocessable_entity
+      render 'appointments/new', status: :unprocessable_entity
     end
   end
 
   def index
+    @my_appointments = Appointment.where(user_id: current_user.id)
+    @experience = Experience.where(params[:experience_id])
   end
 
   def show
