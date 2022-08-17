@@ -1,0 +1,24 @@
+<h1 class="text-center my-3">My experiences listed</h1>
+  <div class="container">
+      <%= link_to "Add A Experience", new_experience_path, class: "btn btn-flat" %>
+      <div class="row">
+        <% @my_experiences.each do |experience| %>
+          <div class="col p-3">
+            <div class="card" style="width: 18rem;">
+             <% if experience.photo.attached? %>
+              <%= cl_image_tag experience.photo.key, class: "card-img-top" %>
+                <% else %>
+              <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
+                <% end %>
+                <div class="card-body">
+                  <h5 class="card-title">Learn <%= experience.activity_name %> with <%= experience.grandma_name %></h5>
+                  <p class="card-text"><%= experience.description %></p>
+                  <p class="card-text">Price: $<%= experience.price %></p>
+                  <%= link_to "See more", experience_path(experience), class: "btn" %>
+                </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+  </div>
