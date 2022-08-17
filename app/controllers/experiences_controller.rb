@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     if params[:search]
@@ -45,10 +46,7 @@ class ExperiencesController < ApplicationController
   def my_index
     # Find all the experiences belonging
     @my_experiences = Experience.where(user_id: current_user.id)
-    # TBFinished
   end
-
-  # Method to see One of my experience --> show
 
   private
 
