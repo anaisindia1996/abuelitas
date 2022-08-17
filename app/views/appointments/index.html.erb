@@ -14,6 +14,7 @@
                   <h5 class="card-title"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
                   <p class="card-text">Scheduled for: <%= appointment.date %></p>
                   <p class="card-text">Hosted by: <%= appointment.user.first_name %> <%= appointment.user.last_name %></p>
+                  <p class="card-text">Current status: <%= appointment.status %></p>
                   <% if Date.today > appointment.date %>
                     <%= link_to "Review this experience", experience_path(appointment.experience), class: "btn btn-outline text-center" %>
                   <% else %>
