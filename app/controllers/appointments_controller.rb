@@ -26,11 +26,12 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
+    raise
     @experience = @appointment.experience
   end
 
   def confirmed
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find(params[:appointment_id])
     @experience = @appointment.experience
     @appointment.status = 1
     @appointment.save
@@ -38,7 +39,7 @@ class AppointmentsController < ApplicationController
   end
 
   def declined
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find(params[:appointment_id])
     @experience = @appointment.experience
     @appointment.status = 2
     @appointment.save

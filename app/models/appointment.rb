@@ -6,7 +6,7 @@ class Appointment < ApplicationRecord
 
   enum status: {
     pending: 0,
-    active: 1,
-    archived: 2
+    confirmed: 1,
+    declined: 2
   }
 end

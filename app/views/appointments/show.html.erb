@@ -9,13 +9,7 @@
         </div>
         <div class="col-6  d-flex flex-column justify-content-center align-items-center ">
           <h3>Status of the Request</h3>
-          <% if @appointment.pending? %>
-            <p class="status-orange"><%= @appointment.status %></p>
-          <% elsif @appointment.accepted? %>
-            <p class="status-green"><%= @appointment.status %></p>
-          <% elsif @appointment.declined?%>
-            <p class="status-red"><%= @appointment.status %></p>
-          <% end %>
+        <%= @appointment.status %>
 
   <div class="row justify-content-center ">
     <div class="col-12 d-flex justify-content-around m-5">
@@ -23,7 +17,7 @@
           <%= link_to "Cancel appointment", appointment_path(@appointment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
         <% else %>
-          <%= link_to "Approve request", appointment_accepted_path(@appointment), class: "btn btn-gradient" %>
+          <%= link_to "Approve request", appointment_confirmed_path(@appointment), class: "btn btn-gradient" %>
           <%= link_to "Decline request", appointment_declined_path(@appointment), class: "btn btn-gradient"%>
         <% end %>
     </div>
