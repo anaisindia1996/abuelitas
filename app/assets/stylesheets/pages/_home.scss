@@ -7,43 +7,86 @@
 
 .banner h1 {
   margin: 0;
-  color: $pink;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: $white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 60px;
   font-weight: bold;
-  padding: 50px 0;
+  padding: 20px 0;
+  padding-top: 70px;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 25px;
   color: white;
   opacity: .7;
+  padding-bottom: 50px;
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.btn {
-  background-color: $light-purple;
+.button {
+  background-color: $pink;
   color: white;
   margin: 0, auto;
   font-size: larger;
-  border-radius: 0px;
-  padding: 10px;
-  border-width: 1px;
-
+  border-radius: 4px;
+  text-decoration: none;
 }
 
-.btn:hover {
-  color: $purple;
+.button:hover {
+  color: black;
+  transition-duration: 1s;
 }
 
-
-.h4 {
+.subheading {
   margin: 0 auto;
   display: flex;
+  font-size: 45px;
+  padding: 45px;
+  text-align: center;
+  justify-content: center;
+  background-color: white;
 }
 
-.explanation ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.details {
+  font-size: 15px;
+  color: black;
 }
+
+.card-product {
+  padding-top: 80px;
+  border-radius: 4px;
+  height: 400px;
+  background: $light-pink;
+  display: flex;
+  align-items: center;
+  color: rgb(42, 41, 41);
+  margin-left: 10px;
+}
+
+.bottom-picture {
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+  border-radius:4px;
+  padding: 10px;
+}
+
+// .card-product h2 {
+//   font-size: 24px;
+//   font-weight: bold;
+//   margin: 0;
+// }
+
+// .card-product p {
+//   font-size: 20px;
+//   line-height: 1.4;
+//   opacity: .5;
+//   margin-bottom: 80px;
+//   margin-top: 12px;
+// }
+
+// .card-product .card-product-infos {
+//   padding: 30px;
+//   margin-bottom: 10px;
+//   width: 50%;
+// }

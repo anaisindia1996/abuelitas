@@ -16,7 +16,7 @@
                   <p class="card-text">Hosted by: <%= appointment.user.first_name %> <%= appointment.user.last_name %></p>
                   <p class="card-text">Current status: <%= appointment.status %></p>
                   <% if Date.today > appointment.date %>
-                    <%= link_to "Review this experience", experience_path(appointment.experience), class: "btn btn-outline text-center" %>
+                    <%= link_to "Review this experience", new_experience_review_path(appointment.experience), class: "btn btn-outline text-center" %>
                   <% else %>
                   <%= link_to "Edit appointment", edit_appointment_path(appointment) %><br>
                   <%= link_to "Cancel appointment", appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

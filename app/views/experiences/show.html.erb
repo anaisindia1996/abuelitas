@@ -1,3 +1,7 @@
+<div class="experience-title">
+  <h1 class="text-center text-white">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
+  <%# HOSTED BY 'HOST' HERE PLS NIC %>
+ </div>
 <% if @experience.photo.attached? %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @experience.photo.key %>');">
     <div class="container">
@@ -17,41 +21,43 @@
   <h3>$<%= @experience.price %>
   <h4 class="pb-5">When: <%= @experience.availability %>
   <div style="width: 100%" class="pt-5">
-  <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=<%= @experience.latitude %>%,%20<%= @experience.longitude %>+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
-
+    <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=<%= @experience.latitude %>%,%20<%= @experience.longitude %>+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+  </div>
     <%# IF CURRENT USER IS OWNER %>
-    <%  if @experience.user == current_user %>
+  <% if @experience.user == current_user %>
     <p><%= link_to "Delete this experience", @experience, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
     <%= link_to "Back to All My Experiences", my_experiences_path, class: "btn" %>
-        <%= link_to "Edit this experience", edit_experience_path, class: "btn" %>
-
-      <% else %>
+      <%= link_to "Edit this experience", edit_experience_path, class: "btn" %>
+  <% else %>
     <%= link_to "Book this experience", new_experience_appointment_path(@experience), class: "btn mt-5 mb-3" %>
-
   <% end %>
 </div>
-  <div class="bg-white text-center">
+
+</div>
+  <div class="bg-white text-center border-top">
     <div class="container pb-5">
       <h2 class="py-5">Reviews:</h2>
         <div class="list-group">
           <% @experience.reviews.each do |review| %>
             <li class="list-group-item">
               <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fa-solid fa-star"></i>
-                <% else %>
-                  <i class="fa-regular fa-star"></i>
+                <% count = 0 %>
+                <% 5.times do %>
+                  <% if review.rating > count %>
+                    <i class="fa-solid fa-star"></i>
+                  <% else %>
+                    <i class="fa-regular fa-star"></i>
+                  <% end %>
+                    <% count += 1 %>
                 <% end %>
-                  <% count += 1 %>
-              <% end %>
               </small>
-            <p><%= review.content %></p>
+              <p>
+                <%= review.content %>
+              </p>
             </li>
           <% end %>
       </div>
-
+      <%# hiding this for now %>
       <%# <%= simple_form_for [@experience, @review] do |f| %>
         <%# <%= f.input :rating, collection: 0..5 %>
         <%# <%= f.input :content%>
@@ -59,3 +65,5 @@
       <%# <% end %>
   </div>
     </div>
+  </div>
+</div>
