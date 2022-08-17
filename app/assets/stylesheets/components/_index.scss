@@ -15,7 +15,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 
@@ -26,9 +26,8 @@
 }
 
 .card-body {
-  max-height: 200px;
+  max-height: 240px;
   min-width: 18px;
-  margin-left: 5px;
 }
 
 .card-body h5 {
@@ -41,11 +40,12 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
-  padding: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  // position: relative;
 }
 
 

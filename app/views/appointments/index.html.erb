@@ -17,8 +17,8 @@
                   <% if Date.today > appointment.date %>
                     <%= link_to "Review this experience", experience_path(appointment.experience), class: "btn btn-outline text-center" %>
                   <% else %>
-                  <%= link_to "Edit appointment", experience_path(appointment.experience) %>
-                  <%= link_to "Cancel appointment", experience_path(appointment.experience) %>
+                  <%= link_to "Edit appointment", edit_appointment_path(appointment) %><br>
+                  <%= link_to "Cancel appointment", appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
                   <% end %>
                 </div>
             </div>
