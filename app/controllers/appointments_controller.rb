@@ -27,6 +27,22 @@ class AppointmentsController < ApplicationController
   def show
   end
 
+  def edit
+    @appointment = Appointment.find(params[:id])
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(appointment_params)
+    redirect_to appointments_path
+  end
+
+  def destroy
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    redirect_to appointments_path, status: :see_other, notice: "Appointment was cancelled"
+  end
+
   private
 
   def appointment_params
