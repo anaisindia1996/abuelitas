@@ -1,12 +1,23 @@
 .btn {
-  background-color: $light-purple;
+  background-color: $pink;
   color: white;
   margin: 0, auto;
   font-size: larger;
-  border-radius: 0px;
+  border-radius: 4px;
   padding: 10px;
 }
 
 .btn:hover {
-  color: $purple;
+  color: $pale-pink;
+}
+
+.new-btn {
+  background-color: transparent !important;
+  border: 0;
+  padding: 0;
+  color: $pink;
+}
+
+.new-btn:hover {
+  color: $pale-pink;
 }
