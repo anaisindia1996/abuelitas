@@ -2,4 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card-experience {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 12px;
+  border-bottom: $pink;
+  box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+  border: 5px;
+  margin-bottom: 12px;
+}
+
+.card-experience > img {
+  width: calc(65% - 6px);
 }
