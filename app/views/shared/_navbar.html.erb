@@ -4,6 +4,15 @@
       <%= image_tag "abuelitas-favicon.png", style: "width:60px"%>
     <% end %>
 
+<%= simple_form_for :search, url: experiences_path, method: :get, defaults: { wrapper: false } do |f| %>
+      <div class="search-form-control form-group d-flex">
+        <%= f.input :activity_name, placeholder: "Search for an experience", class:"form-control string required", label: false %>
+        <%= f.button :button do %>
+            <i class="fas fa-search"></i>
+        <% end %>
+      </div>
+    <% end %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

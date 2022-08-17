@@ -2,7 +2,12 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
   def index
-    @experiences = Experience.all
+    if params[:search]
+      experiences_params = params[:search][:activity_name].downcase
+      @experiences = Experience.where("LOWER(activity_name) LIKE ?", "%#{experiences_params}%")
+    else
+      @experiences = Experience.all
+    end
   end
 
   def show
