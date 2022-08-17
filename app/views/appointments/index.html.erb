@@ -6,7 +6,7 @@
           <div class="col p-3">
             <div class="card" style="width: 18rem;">
              <% if appointment.experience.photo.attached? %>
-              <%= cl_image_tag experience.photo.key, class: "card-img-top" %>
+              <%= cl_image_tag appointment.experience.photo.key, class: "card-img-top" %>
                 <% else %>
               <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
                 <% end %>

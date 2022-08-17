@@ -25,6 +25,24 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+    @appointment = Appointment.find(params[:id])
+    @experience = @appointment.experience
+  end
+
+  def confirmed
+    @appointment = Appointment.find(params[:id])
+    @experience = @appointment.experience
+    @appointment.status = 1
+    @appointment.save
+    render :show
+  end
+
+  def declined
+    @appointment = Appointment.find(params[:id])
+    @experience = @appointment.experience
+    @appointment.status = 2
+    @appointment.save
+    render :show
   end
 
   def edit
@@ -41,6 +59,12 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
     @appointment.destroy
     redirect_to appointments_path, status: :see_other, notice: "Appointment was cancelled"
+  end
+
+  def my_agent_appointments
+    # Find all the experiences belonging
+    # Trying to find the appointment.experience.user_id to check if it match current_user
+    @my_agents_appointments = current_user.agent_appointments
   end
 
   private
