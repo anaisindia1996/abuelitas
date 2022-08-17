@@ -12,13 +12,14 @@
   font-size: 60px;
   font-weight: bold;
   padding: 20px 0;
+  padding-top: 70px;
 }
 
 .banner p {
   font-size: 25px;
   color: white;
   opacity: .7;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
@@ -28,31 +29,22 @@
   margin: 0, auto;
   font-size: larger;
   border-radius: 4px;
-  padding: 10px;
   text-decoration: none;
-  border-width: 1px;
 }
 
 .button:hover {
-  background-color: none;
   color: black;
-  transition-duration: 3s;
+  transition-duration: 1s;
 }
-
 
 .subheading {
   margin: 0 auto;
   display: flex;
-  font-size: 40px;
-  padding: 35px;
+  font-size: 45px;
+  padding: 45px;
   text-align: center;
   justify-content: center;
-}
-
-.explanation ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  background-color: white;
 }
 
 .details {
@@ -61,38 +53,40 @@
 }
 
 .card-product {
-  overflow: hidden;
+  padding-top: 80px;
+  border-radius: 4px;
   height: 400px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: $light-pink;
   display: flex;
   align-items: center;
+  color: rgb(42, 41, 41);
+  margin-left: 10px;
 }
 
-.card-product img {
+.bottom-picture {
   height: 100%;
-  width: 500px;
-  max-width: 50%;
-  object-fit: cover;
+  width: 100%;
+  object-fit:cover;
   border-radius:4px;
+  padding: 10px;
 }
 
-.card-product h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-}
+// .card-product h2 {
+//   font-size: 24px;
+//   font-weight: bold;
+//   margin: 0;
+// }
 
-.card-product p {
-  font-size: 20px;
-  line-height: 1.4;
-  opacity: .5;
-  margin-bottom: 80px;
-  margin-top: 12px;
-  text-overflow: wrap;
-}
+// .card-product p {
+//   font-size: 20px;
+//   line-height: 1.4;
+//   opacity: .5;
+//   margin-bottom: 80px;
+//   margin-top: 12px;
+// }
 
-.card-product .card-product-infos {
-  padding: 30px;
-  margin-bottom: 10px;
-}
+// .card-product .card-product-infos {
+//   padding: 30px;
+//   margin-bottom: 10px;
+//   width: 50%;
+// }

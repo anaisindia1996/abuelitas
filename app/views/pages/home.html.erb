@@ -3,7 +3,7 @@
   <div class="container text-center">
     <h1>Discover a new experience with a local grandma</h1>
     <p>Tell us what you'd like to experience and we'll take care of the rest</p>
-    <h5><%= link_to "Find an abuela", experiences_path, class: "button p-3 mt-1" %></h5>
+    <h5><%= link_to "Find an abuela", experiences_path, class: "button p-3 mt-3" %></h5>
   </div>
 </div>
 <div class="container-fluid bg-white pb-5">
@@ -26,13 +26,22 @@
       </div>
   </div>
 </div>
-<h4 class="subheading">Testimonials</h4>
-<div class="card-product">
-  <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660692745/christian-bowen-TOKVE7PNwAc-unsplash_czk2j1.jpg" />
-  <div class="card-product-infos">
-    <h2>Baking with Mary</h2>
-    <p>My kids never knew their grandma, so it was so special to have Mary teach them how to bake</p>
-    <h5><%= link_to "Find an abuela", experiences_path, class: "button p-3 mt-12" %></h5>
+<h4 class="subheading">Reviews</h4>
+<div class="d-flex justify-content-between" style="height: 600px">
+  <div class="col-6">
+    <div class="container">
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h2>Baking with Mary</h2>
+          <h4>"My kids never knew their grandma, so it was so special to have Mary teach them how to bake more text more tesdkfdkfjsdfksdjfksdjfksdjfsdkfjsdkfjsdkjf"</h4>
+          <p class="pb-5">- Anais, Montreal</p>
+          <h5><%= link_to "Find an abuela", experiences_path, class: "button p-3 mt-5" %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <img class="bottom-picture" src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660758577/26947d66-9225-41fb-951b-1efce92d8f3c_xgohsd.jpg" />
   </div>
 </div>
 
