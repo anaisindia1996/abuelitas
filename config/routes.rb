@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
   # Define the custom root for my experiences
-  get 'my_experiences', to: 'experiences#my_experiences'
+  get 'my-experiences', to: 'experiences#my_index'
   get 'my_experiences/:id', to: 'experiences#my_experience', as: :my_camera
 end

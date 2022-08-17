@@ -1,8 +1,8 @@
-<div class="container py-5">
-  <H1 class="text-center pb-3">Find an experience:</H1>
-    <div class="container">
+<h1 class="text-center my-3">My experiences listed</h1>
+  <div class="container">
+      <%= link_to "Add A Experience", new_experience_path, class: "btn btn-flat" %>
       <div class="row">
-        <% @experiences.each do |experience| %>
+        <% @my_experiences.each do |experience| %>
           <div class="col p-3">
             <div class="card" style="width: 18rem;">
              <% if experience.photo.attached? %>
@@ -20,5 +20,5 @@
           </div>
         <% end %>
       </div>
-    </div>
-</div>
+
+  </div>

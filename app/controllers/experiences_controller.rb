@@ -37,7 +37,7 @@ class ExperiencesController < ApplicationController
   end
 
   # Method to see all my experiences --> index
-  def my_experiences
+  def my_index
     # Find all the experiences belonging
     @my_experiences = Experience.where(user_id: current_user.id)
     # TBFinished
