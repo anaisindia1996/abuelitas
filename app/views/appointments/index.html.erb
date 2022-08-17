@@ -8,13 +8,12 @@
              <% if appointment.experience.photo.attached? %>
               <%= cl_image_tag experience.photo.key, class: "card-img-top" %>
                 <% else %>
-              <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
+              <img src= <%= appointment.experience.images %> >
                 <% end %>
                 <div class="card-body">
                   <h5 class="card-title"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
                   <p class="card-text">Scheduled for: <%= appointment.date %></p>
-                  <p class="card-text">Hosted by: <%= appointment.user.first_name %> <%= appointment.user.last_name %></p>
-                  <%# <p class="card-text">Current status: <%= appointment.status %></p> %>
+                  <p class="card-text">Hosted by: <%= appointment.experience.user.first_name %> <%= appointment.experience.user.last_name %></p>
                   <% if Date.today > appointment.date %>
                     <%= link_to "Review this experience", new_experience_review_path(appointment.experience), class: "btn btn-outline text-center" %>
                   <% else %>
