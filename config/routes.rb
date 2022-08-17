@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
   # Define the custom root for my experiences
   get 'my-experiences', to: 'experiences#my_index'
-  get 'my_experiences/:id', to: 'experiences#my_experience', as: :my_camera
+  get 'my_experiences/:id', to: 'experiences#my_experience'
 end
