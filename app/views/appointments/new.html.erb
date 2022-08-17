@@ -1,0 +1,9 @@
+<div class="container py-5">
+  <h1 class="text-center">Schedule an appointment</h1>
+
+    <%= simple_form_for [@experience, @appointment] do |f| %>
+      <%= f.input :date %>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+
+</div>
