@@ -39,6 +39,7 @@
 
               <%= link_to "Update Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "My Appointments", appointments_path, class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, status: :see_other, class: "dropdown-item" %>
             </div>
           </li>
