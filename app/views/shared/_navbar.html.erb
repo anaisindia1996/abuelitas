@@ -1,10 +1,11 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top px-3 border-bottom">
   <div class="container-fluid">
+  <div style="width:212px">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "abuelitas-favicon.png", style: "width:60px"%>
     <% end %>
-
+</div>
     <%= simple_form_for :search, url: experiences_path, method: :get, defaults: { wrapper: false } do |f| %>
       <div class="search-form-control form-group d-flex">
         <%= f.input :activity_name, placeholder: "Search for an experience", class:"form-control string required", label: false %>
