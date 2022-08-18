@@ -29,20 +29,16 @@ class AppointmentsController < ApplicationController
     @experience = @appointment.experience
   end
 
-  def confirmed
-    @appointment = Appointment.find(params[:appointment_id])
-    @experience = @appointment.experience
-    @appointment.status = 1
-    @appointment.save
-    render :show
+  def confirm
+    @appointment = Appointment.find(params[:id])
+    @appointment.confirmed!
+    redirect_to my_experiences_path
   end
 
-  def declined
-    @appointment = Appointment.find(params[:appointment_id])
-    @experience = @appointment.experience
-    @appointment.status = 2
-    @appointment.save
-    render :show
+  def decline
+    @appointment = Appointment.find(params[:id])
+    @appointment.declined!
+    redirect_to my_experiences_path, status: :see_other
   end
 
   def edit

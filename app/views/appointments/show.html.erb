@@ -1,4 +1,4 @@
-<h2>Experience Details</h2>
+<h2>Experience Details ttt</h2>
             <p><%= @appointment.experience.activity_name %></p>
             <p><%= @appointment.experience.description%></p>
           <h3> Dates </h3>
@@ -11,6 +11,11 @@
           <h3>Status of the Request</h3>
         <%= @appointment.status %>
 
+<%# STATUS & actions  %>
+
+<%# If Request is approved, do not display approve/request anymore (only agent user can see) %>
+
+<%# IF to colored the status of the request (same as my_index) %>
   <div class="row justify-content-center ">
     <div class="col-12 d-flex justify-content-around m-5">
       <% if current_user == @appointment.user %>

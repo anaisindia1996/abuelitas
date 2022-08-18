@@ -1,5 +1,5 @@
-      <h1 class="text-center my-3">My experiences listed</h1>
-        <div class="container">
+    <h1 class="text-center my-3">My experiences listed</h1>
+      <div class="container">
             <%= link_to "Add A Experience", new_experience_path, class: "btn btn-flat" %>
             <div class="row">
               <% @my_experiences.each do |experience| %>
@@ -31,21 +31,28 @@
                 <div class="card-trip-infos align-items-center">
                   <div>
                   <div>
-                  <h5 class="card-title mb-3"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
-                  <p class="card-text mb-3"><%= appointment.experience.description %></p>
+                    <h5 class="card-title mb-3"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
+                    <p class="card-text mb-3"><%= appointment.experience.description %></p>
                   </div>
-                  <%= link_to "Approve request", appointment_confirmed_path(appointment), class: "btn" %>
-                  <%= link_to "Decline request", appointment_declined_path(appointment), class: "btn"%>
+                    <%= link_to "Approve request", confirm_appointment_path(appointment, status: 1), class: "btn" %>
+                    <%= link_to "Decline request", decline_appointment_path(appointment, status: 2), class: "btn"%>
                   </div>
                   <div>
-                  <h2 class="card-trip-pricing mb-3 h1">$<%= appointment.experience.price %></h2>
-                  <%# to be replaced with the user client image%>
-                  <%# <%= cl_image_tag appointment.experience.photo.key, class: "card-img-top card-trip-user avatar-bordered rounded-circle" %>
-                  <%# IF %>
-                  <p class="btn-green"><%= appointment.status %></p>
+                    <h2 class="card-trip-pricing mb-3 h1">$<%= appointment.experience.price %></h2>
+                    <%# to be replaced with the user client image%>
+                    <%# <%= cl_image_tag appointment.experience.photo.key, class: "card-img-top card-trip-user avatar-bordered rounded-circle" %>
+                    <%# IF STATUS TO BE FIXED *%>
+                    <% if appointment.pending? %>
+                          <p class="btn-blue"><%= appointment.status %></p>
+                    <% elsif appointment.confirmed? %>
+                          <p class="btn-green"><%= appointment.status %></p>
+                    <% elsif appointment.declined? %>
+                          <p class="btn-red"><%= appointment.status %></p>
+                    <% end %>
+                    <%# <p class="btn-blue"><%= appointment.status %></p>
                   </div>
                 </div>
-              </div>
-          </div>
+            </div>
+        </div>
               <% end %>
-  </div>
+    </div>

@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   get 'my_experiences/:id', to: 'experiences#my_experience'
 
   # Appointments - enums
-  resources :appointments, only: [:index, :show, :destroy ] do
-    get 'confirmed', to: 'appointments#confirmed', as: :confirmed
-    get 'declined', to: 'appointments#declined', as: :declined
-  end
+  resources :appointments, only: [:index, :show, :destroy ]
+
+  get 'confirm_appointment/:id', to: 'appointments#confirm', as: :confirm_appointment
+  get 'decline_appointment/:id', to: 'appointments#decline', as: :decline_appointment
+
   get 'agents-appointments', to: 'appointments#my_agent_appointments'
 end
