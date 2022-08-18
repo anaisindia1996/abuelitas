@@ -6,27 +6,33 @@
     <h5><%= link_to "Find an abuela", experiences_path, class: "button p-3 mt-3" %></h5>
   </div>
 </div>
-<div class="container-fluid bg-white pb-5">
+<div class="container-homepage">
+<div class="container-fluid bg-white pb-5 box">
   <h4 class="subheading">How it works</h4>
-  <div class="row px-5">
+  <div class="row px-5 featured-box">
       <div class="col text-center">
-        <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660667117/1752922_bpt8qr.png" style="width:60px">
-      <h4 class="py-3">Pick an experience</h4>
+        <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660667117/1752922_bpt8qr.png" style="width:60px;margin-bottom:  10px;">
+      <%# <h4 class="py-3">Pick an experience</h4> %>
+      <H4><%= link_to "Pick an experience", experiences_path, class: "py-3" %></H4>
       <p class="details">Browse all our experiences and pick the one that tickles your fancy.</p>
       </div>
       <div class="col text-center">
-        <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660691858/791475_d8e5wz.png" style="width:60px">
-      <h4 class="py-3">Book an appointment</h4>
+        <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660691858/791475_d8e5wz.png" style="width:60px;margin-bottom:  10px;">
+      <%# <h4 class="py-3">Book an appointment</h4> %>
+      <H4><%= link_to "Book an appointment", experiences_path, class: "py-3" %></H4>
       <p class="details">Set a date and make your appointment</p>
       </div>
       <div class="col text-center">
-        <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660667187/3554643_e82nui.png" style="width:60px">
-      <h4 class="py-3">Enjoy quality time with grandma!</h4>
+        <img src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660667187/3554643_e82nui.png" style="width:60px;margin-bottom:  10px;">
+      <%# <h4 class="py-3">Enjoy quality time with grandma!</h4> %>
+      <H4><%= link_to "Enjoy quality time with grandma!", experiences_path, class: "py-3" %></H4>
       <p class="details">Meet up with abuela for your authentic experience</p>
       </div>
   </div>
 </div>
-<h4 class="subheading">Testimonials</h4>
+</div>
+<div class="testimonial-box">
+<h4 class="subheading subheading-testimonials">Testimonials</h4>
 <div class="d-flex justify-content-between" style="height: 600px">
   <div class="col-6">
     <div class="container">
@@ -40,10 +46,11 @@
       </div>
     </div>
   </div>
-  <div class="col-6">
+  <div class="col-6 picture-box">
     <img class="bottom-picture" src="https://res.cloudinary.com/dbb3sntqk/image/upload/v1660758577/26947d66-9225-41fb-951b-1efce92d8f3c_xgohsd.jpg" />
+    </div>
+    </div>
   </div>
-</div>
 
 
 
