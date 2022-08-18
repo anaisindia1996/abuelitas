@@ -67,13 +67,18 @@
 .card-product {
   padding-top: 80px;
   border-radius: 4px;
-  height: 400px;
+  // height: 400px;
   background: white;
   display: flex;
   align-items: center;
   color: rgb(42, 41, 41);
   margin-left: 10px;
+  margin: 0px 0px 0px 10px!important;
+  height: 100%;
+  width: 100%;
+
 }
+
 
 .bottom-picture {
   height: 100%;
@@ -123,7 +128,7 @@ padding-bottom: 60px;
 }
 
 .card-product-infos {
-  padding: 36px !important;
+  padding: 30px !important;
 }
 
 .box {
@@ -132,8 +137,10 @@ margin-top: 32px !important;
 
 }
 
+.bp-10 {
+  margin-top: 10px;
+}
 
 a {
   text-decoration: none !important;
-
 }
