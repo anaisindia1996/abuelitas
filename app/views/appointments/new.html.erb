@@ -3,7 +3,9 @@
 
     <%= simple_form_for [@experience, @appointment] do |f| %>
       <%= f.input :date %>
-      <%= f.submit class: 'btn btn-primary' %>
+      <div class="text-center pt-5">
+        <%= f.submit class: 'btn' %>
+      </div>
     <% end %>
 
 </div>

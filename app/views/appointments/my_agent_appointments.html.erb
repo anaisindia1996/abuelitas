@@ -1,25 +1,18 @@
 <div class="container py-5">
-  <h1 class="text-center pb-3">My appointments</h1>
+  <h1 class="text-center pb-3">My agent appointments</h1>
     <div class="container">
       <div class="row">
-        <% @my_appointments.each do |appointment| %>
+        <% @my_agents_appointments.each do |appointment| %>
           <div class="col p-3">
             <div class="card" style="width: 18rem;">
              <% if appointment.experience.photo.attached? %>
               <%= cl_image_tag appointment.experience.photo.key, class: "card-img-top" %>
                 <% else %>
-              <img src= <%= appointment.experience.images %> >
+              <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
                 <% end %>
                 <div class="card-body">
                   <h5 class="card-title"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
                   <p class="card-text">Scheduled for: <%= appointment.date %></p>
-                  <% if appointment.Pending? %>
-                          <p class="btn-blue"><%= appointment.status %></p>
-                    <% elsif appointment.Confirmed? %>
-                          <p class="btn-green"><%= appointment.status %></p>
-                    <% elsif appointment.Declined? %>
-                          <p class="btn-red"><%= appointment.status %></p>
-                    <% end %>
                   <p class="card-text">Hosted by: <%= appointment.user.first_name %> <%= appointment.user.last_name %></p>
                   <% if Date.today > appointment.date %>
                     <%= link_to "Review this experience", new_experience_review_path(appointment.experience), class: "btn btn-outline text-center" %>

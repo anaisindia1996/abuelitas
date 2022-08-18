@@ -8,7 +8,8 @@
 }
 
 .btn:hover {
-  color: $pale-pink;
+  color: $black;
+  transition-duration: 0.5s;
 }
 
 .new-btn {
@@ -19,5 +20,6 @@
 }
 
 .new-btn:hover {
-  color: $pale-pink;
+  color: $black;
+  transition-duration: 0.5s;
 }

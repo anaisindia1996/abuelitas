@@ -9,4 +9,12 @@ Rails.application.routes.draw do
   # Define the custom root for my experiences
   get 'my-experiences', to: 'experiences#my_index'
   get 'my_experiences/:id', to: 'experiences#my_experience'
+
+  # Appointments - enums
+  resources :appointments, only: [:index, :show, :destroy ]
+
+  get 'confirm_appointment/:id', to: 'appointments#confirm', as: :confirm_appointment
+  get 'decline_appointment/:id', to: 'appointments#decline', as: :decline_appointment
+
+  get 'agents-appointments', to: 'appointments#my_agent_appointments'
 end
