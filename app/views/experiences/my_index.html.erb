@@ -1,56 +1,51 @@
-    <h1 class="text-center my-3">My experiences listed</h1>
-      <div class="container">
-          <%= link_to "Add A Experience", new_experience_path, class: "btn btn-flat" %>
-          <div class="row">
-            <% @my_experiences.each do |experience| %>
-              <div class="col p-3">
-                <div class="card" style="width: 18rem;">
-                <% if experience.photo.attached? %>
-                  <%= cl_image_tag experience.photo.key, class: "card-img-top" %>
-                    <% else %>
-                  <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
-                    <% end %>
-                    <div class="card-body">
-                      <h5 class="card-title">Learn <%= experience.activity_name %> with <%= experience.grandma_name %></h5>
-                      <p class="card-text"><%= experience.description %></p>
-                      <p class="card-text">Price: $<%= experience.price %></p>
-                      <%= link_to "See more", experience_path(experience), class: "btn" %>
-                    </div>
+      <h1 class="text-center my-3">My experiences listed</h1>
+        <div class="container">
+            <%= link_to "Add A Experience", new_experience_path, class: "btn btn-flat" %>
+            <div class="row">
+              <% @my_experiences.each do |experience| %>
+                <div class="col p-3">
+                  <div class="card" style="width: 18rem;">
+                  <% if experience.photo.attached? %>
+                    <%= cl_image_tag experience.photo.key, class: "card-img-top" %>
+                      <% else %>
+                    <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
+                      <% end %>
+                      <div class="card-body">
+                        <h5 class="card-title">Learn <%= experience.activity_name %> with <%= experience.grandma_name %></h5>
+                        <p class="card-text"><%= experience.description %></p>
+                        <p class="card-text">Price: $<%= experience.price %></p>
+                        <%= link_to "See more", experience_path(experience), class: "btn" %>
+                      </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+
+      <h2 class="text-center my-3">My Appointment requests</h2>
+        <div class="row">
+            <% @my_agents_appointments.each do |appointment| %>
+            <div class="col-6">
+                <div class="card-trip mt-6 mb-6 pb-3">
+                  <%= cl_image_tag appointment.experience.photo.key %>
+                <div class="card-trip-infos align-items-center">
+                  <div>
+                  <div>
+                  <h5 class="card-title mb-3"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
+                  <p class="card-text mb-3"><%= appointment.experience.description %></p>
+                  </div>
+                  <%= link_to "Approve request", appointment_confirmed_path(appointment), class: "btn" %>
+                  <%= link_to "Decline request", appointment_declined_path(appointment), class: "btn"%>
+                  </div>
+                  <div>
+                  <h2 class="card-trip-pricing mb-3 h1">$<%= appointment.experience.price %></h2>
+                  <%# to be replaced with the user client image%>
+                  <%# <%= cl_image_tag appointment.experience.photo.key, class: "card-img-top card-trip-user avatar-bordered rounded-circle" %>
+                  <%# IF %>
+                  <p class="btn-green"><%= appointment.status %></p>
+                  </div>
                 </div>
               </div>
-            <% end %>
           </div>
-
-
-            <h1 class="text-center pb-3">My agent appointments</h1>
-            <% @my_agents_appointments.each do |appointment| %>
-                <% if appointment.experience.photo.attached? %>
-                  <%= cl_image_tag appointment.experience.photo.key, class: "card-img-top" %>
-                    <% else %>
-                  <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
-                    <% end %>
-                      <h5 class="card-title"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
-                      <p class="card-text">Scheduled for: <%= appointment.date %></p>
-                      <p class="card-text">Hosted by: <%= appointment.user.first_name %> <%= appointment.user.last_name %></p>
-                      <% if Date.today > appointment.date %>
-                        <%= link_to "Review this experience", new_experience_review_path(appointment.experience), class: "btn btn-outline text-center" %>
-                      <% else %>
-                        <%= link_to "Edit appointment", edit_appointment_path(appointment) %><br>
-                        <%= link_to "Cancel appointment", appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-                      <% end %>
-                      <h3>Status of the Request</h3>
-                        <%= appointment.status %>
-
-
-                        <% if current_user == appointment.user %>
-                          <% else %>
-                            <%= link_to "Approve request", appointment_confirmed_path(appointment), class: "btn" %>
-                            <%= link_to "Decline request", appointment_declined_path(appointment), class: "btn"%>
-                          <% end %>
-
-            <% end %>
-
-
-
-
-      </div>
+              <% end %>
+  </div>
