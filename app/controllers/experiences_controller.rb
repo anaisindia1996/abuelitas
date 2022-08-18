@@ -13,7 +13,7 @@ class ExperiencesController < ApplicationController
       {
         lat: experience.latitude,
         lng: experience.longitude,
-        # info_window: render_to_string(partial: "info_window", locals: {flat: flat}),
+        info_window: render_to_string(partial: "info_window", locals: {experience: experience}),
         image_url: helpers.asset_url("https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660853532/6_ebqm2m.png")
       }
     end

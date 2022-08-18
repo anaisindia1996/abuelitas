@@ -2,7 +2,9 @@
   <h1 class="text-center">Schedule an appointment</h1>
 
     <%= simple_form_for [@experience, @appointment] do |f| %>
-      <%= f.input :date %>
+      <div class="col3">
+      <%= f.input :date, html5: true %>
+      </div>
       <div class="text-center pt-5">
         <%= f.submit class: 'btn' %>
       </div>
