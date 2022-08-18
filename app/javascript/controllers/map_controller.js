@@ -51,4 +51,5 @@ export default class extends Controller {
         .addTo(this.map)
     })
   }
+
 }
