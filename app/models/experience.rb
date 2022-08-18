@@ -2,6 +2,10 @@ class Experience < ApplicationRecord
   has_one_attached :photo
   has_many :reviews, dependent: :destroy
   has_many :appointments
+
+  has_many :experience_tags, dependent: :destroy
+  has_many :tags, through: :experience_tags
+
   belongs_to :user
   geocoded_by :address
 

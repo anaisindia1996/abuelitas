@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_18_190426) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_18_231123) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_190426) do
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
+  create_table "experience_tags", force: :cascade do |t|
+    t.bigint "experience_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_experience_tags_on_experience_id"
+    t.index ["tag_id"], name: "index_experience_tags_on_tag_id"
+  end
+
   create_table "experiences", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,6 +89,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_190426) do
     t.index ["experience_id"], name: "index_reviews_on_experience_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -99,6 +114,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_190426) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "experiences"
   add_foreign_key "appointments", "users"
+  add_foreign_key "experience_tags", "experiences"
+  add_foreign_key "experience_tags", "tags"
   add_foreign_key "experiences", "users"
   add_foreign_key "reviews", "experiences"
 end

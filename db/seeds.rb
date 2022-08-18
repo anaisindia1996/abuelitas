@@ -61,3 +61,13 @@ puts "Creating the Experiences..."
   experience.save!
   puts "Experience, with id #{experience.id} has been created!"
 # end
+
+# Creating the tags
+names = %w[evil\ brat evil thief snake liar killer smelly]
+
+puts "Creating tags..."
+names.each do |name|
+  Tag.create!(name: name)
+end
+
+puts "Show time!"
