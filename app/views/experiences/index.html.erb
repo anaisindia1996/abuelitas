@@ -8,11 +8,11 @@
              <% if experience.photo.attached? %>
               <%= cl_image_tag experience.photo.key, class: "card-img-top" %>
                 <% else %>
-              <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg">
+              <img src= <%= experience.images %> >
                 <% end %>
                 <div class="card-body">
-                  <h5 class="card-title"><%= experience.activity_name %> with <%= experience.grandma_name.first(25) %></h5>
-                  <p class="card-text"><%= experience.description.first(100) %>...</p>
+                  <h5 class="card-title"><%= experience.activity_name %> with <%= experience.grandma_name%></h5>
+                  <p class="card-text"><%= experience.description %></p>
                   <p class="card-text"><strong>Price:</strong> $<%= experience.price %></p>
                   <%= link_to "Learn More", experience_path(experience), class: "btn btn-outline text-center" %>
                 </div>

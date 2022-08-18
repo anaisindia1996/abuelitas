@@ -1,5 +1,5 @@
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top px-3">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top px-3 border-bottom">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "abuelitas-favicon.png", style: "width:60px"%>
@@ -37,7 +37,11 @@
               <%=link_to "My Dashboard", my_experiences_path, class: "dropdown-item" %>
               <% end %>
               <%= link_to "My Appointments", appointments_path, class: "dropdown-item" %>
+<<<<<<< HEAD
               <%= link_to "Update Profile", edit_user_registration_path, class: "dropdown-item" %>
+=======
+              <div class="dropdown-divider"></div>
+>>>>>>> master
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, status: :see_other, class: "dropdown-item" %>
             </div>
           </li>
