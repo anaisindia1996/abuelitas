@@ -5,8 +5,8 @@ class Appointment < ApplicationRecord
   validates :date, presence: true
 
   enum status: {
-    pending: 0,
-    confirmed: 1,
-    declined: 2
+    Pending: 0,
+    Confirmed: 1,
+    Declined: 2
   }
 end

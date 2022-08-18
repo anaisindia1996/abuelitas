@@ -1,3 +1,7 @@
+.container {
+margin-top: 20px !important;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -65,9 +69,10 @@
   font-size: larger;
   border-radius: 4px;
   padding: 10px;
+  display: inline-block;
 }
 
 
-// .left-box {
-//   margin-right: 24px;
-// }
+.card-trip-pricing {
+  text-align: center;
+}
