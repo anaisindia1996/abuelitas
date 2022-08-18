@@ -26,3 +26,8 @@
   background-color: white;
   color: white;
 }
+
+.container .container {
+  display: flex;
+  justify-content: space-evenly;
+}
