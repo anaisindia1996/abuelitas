@@ -1,18 +1,18 @@
 <% if @experience.photo.attached? %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @experience.photo.key %>');">
     <div class="container">
-      <h1 class="text-center text-white">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
+      <h1 class="text-center text-white"><%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
     </div>
   </div>
 <% else %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @experience.images %>');">
       <div class="container">
-        <h1 class="text-center text-white">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
+        <h1 class="text-center text-white"><%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
       </div>
     </div>
 <% end %>
 <div class="text-center container py-5">
-  <H1 class="py-2">Learn <%= @experience.activity_name %> with <%= @experience.grandma_name %></H1>
+  <h1 class="py-2"><%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
   <h3>Description: <%= @experience.description %> </h3>
   <h3>$<%= @experience.price %>
   <h4 class="pb-5">Experience Happening on: <%= @experience.availability %>
