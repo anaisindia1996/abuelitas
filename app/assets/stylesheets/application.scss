@@ -15,6 +15,7 @@
 @import "components/button";
 @import "components/form";
 @import "components/card";
+@import "components/map";
 
 
 .fullpage {
@@ -24,4 +25,9 @@
 .body {
   background-color: white;
   color: white;
+}
+
+.container .container {
+  display: flex;
+  justify-content: space-evenly;
 }

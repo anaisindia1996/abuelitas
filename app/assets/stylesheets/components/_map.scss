@@ -1,0 +1,13 @@
+.map {
+  margin: 60px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.map iframe {
+  width: 100%;
+  // align-self: flex-end;
+  height: 450px;
+}

@@ -1,3 +1,18 @@
+// landing page 'find an abuela'
+.button {
+  background-color: $pink;
+  color: white;
+  margin: 0, auto;
+  font-size: larger;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: rgb(37, 36, 36);
+  transition-duration: 0.5s;
+}
+// cards of all experiences
 .btn {
   background-color: $pink;
   color: white;
@@ -23,3 +38,22 @@
   color: $black;
   transition-duration: 0.5s;
 }
+// showpage
+// .show-btn {
+//   text-decoration: none !important;
+//   color: white;
+//   background-color: $pink;
+//   padding: 8px 24px;
+//   border-radius: 50px;
+//   font-weight: lighter;
+//   transition: opacity 0.3s ease;
+//   width: 200px;
+//   margin: 0, auto;
+//   font-size: larger;
+// }
+
+// .show-btn:hover {
+//   opacity: 1;
+//   color: $black;
+//   transition-duration: 0.5s;
+// }

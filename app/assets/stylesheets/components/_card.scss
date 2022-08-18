@@ -2,6 +2,53 @@
 margin-top: 20px !important;
 }
 
+.card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 5px;
+  margin-bottom: 10px;
+  color:black;
+}
+
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  max-height: 240px;
+  min-width: 18px;
+}
+
+.card-body h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-body p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  // position: relative;
+}
+
+
+.card-body .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
