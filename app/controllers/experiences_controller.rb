@@ -9,6 +9,14 @@ class ExperiencesController < ApplicationController
     else
       @experiences = Experience.all
     end
+    @markers = @experiences.geocoded.map do |experience|
+      {
+        lat: experience.latitude,
+        lng: experience.longitude,
+        # info_window: render_to_string(partial: "info_window", locals: {flat: flat}),
+        image_url: helpers.asset_url("https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660853532/6_ebqm2m.png")
+      }
+    end
   end
 
   def show
