@@ -3,13 +3,12 @@ class Experience < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :appointments
   belongs_to :user
+  geocoded_by :address
 
   validates :grandma_name, presence: true
   validates :activity_name, presence: true
-  validates :availability, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :location, presence: true
-  validates :latitude, presence: true
-  validates :longitude, presence: true
+  validates :address, presence: true
+  after_validation :geocode, if: :will_save_change_to_address?
 end
