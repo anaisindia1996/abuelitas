@@ -31,13 +31,13 @@ class AppointmentsController < ApplicationController
 
   def confirm
     @appointment = Appointment.find(params[:id])
-    @appointment.confirmed!
+    @appointment.Confirmed!
     redirect_to my_experiences_path
   end
 
   def decline
     @appointment = Appointment.find(params[:id])
-    @appointment.declined!
+    @appointment.Declined!
     redirect_to my_experiences_path, status: :see_other
   end
 
