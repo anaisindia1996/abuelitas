@@ -42,10 +42,11 @@ class ExperiencesController < ApplicationController
     redirect_to experiences_path, status: :see_other, notice: "Experience was successfully destroyed."
   end
 
-  # Method to see all my experiences --> index
   def my_index
     # Find all the experiences belonging
     @my_experiences = Experience.where(user_id: current_user.id)
+    # Find all the booking requests received - TO be helped on that one
+    @my_agents_appointments = current_user.agent_appointments
   end
 
   private
@@ -53,7 +54,6 @@ class ExperiencesController < ApplicationController
   def set_experience
     @experience = Experience.find(params[:id])
   end
-
 
   def experience_params
     params.require(:experience).permit(:grandma_name, :activity_name, :availability, :description, :photo, :price, :location, :latitude, :longitude)

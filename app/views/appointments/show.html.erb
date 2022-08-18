@@ -1,0 +1,37 @@
+<%# NOT USED - TO BE UNPLUGGED? %>
+
+<h2>Experience Details</h2>
+            <p><%= @appointment.experience.activity_name %></p>
+            <p><%= @appointment.experience.description%></p>
+          <h3> Dates </h3>
+            <p>From: <strong><%= @appointment.start_time %></strong></p>
+            <p>Until: <strong><%= @appointment.end_time %></strong></p>
+          <h3> Total Price </h3>
+            <p> $<%= @appointment.experience.price %> CAD</p>
+        </div>
+        <div class="col-6  d-flex flex-column justify-content-center align-items-center ">
+          <h3>Status of the Request</h3>
+        <%= @appointment.status %>
+
+  <div class="row justify-content-center ">
+    <div class="col-12 d-flex justify-content-around m-5">
+      <% if current_user == @appointment.user %>
+          <%= link_to "Cancel appointment", appointment_path(@appointment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+        <% else %>
+          <%= link_to "Approve request", appointment_confirmed_path(@appointment), class: "btn btn-gradient" %>
+          <%= link_to "Decline request", appointment_declined_path(@appointment), class: "btn btn-gradient"%>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center  ">
+    <div class="col-12 d-flex justify-content-center m-3">
+      <% if current_user == @appointment.user %>
+          <%= link_to "Back to All experiences", experiences_path, class: "btn" %>
+        <% else %>
+          <%= link_to "Back to my experiences", my_experiences_path, class: "btn"  %>
+        <% end %>
+    </div>
+  </div>
+</div>
