@@ -30,7 +30,7 @@ puts "Creating the Experiences..."
       price: "60",
       latitude: "45",
       longitude: "-73",
-      location: "Montreal"
+      address: "Montreal"
     )
     experience.user = User.all[0]
     experience.save!
@@ -47,7 +47,7 @@ puts "Creating the Experiences..."
     price: "70",
     latitude: "46",
     longitude: "-72",
-    location: "Toronto"
+    address: "Toronto"
   )
   experience.user = User.all[1]
   experience.save!
@@ -64,7 +64,7 @@ puts "Creating the Experiences..."
     price: "40",
     latitude: "48",
     longitude: "-70",
-    location: "USA"
+    address: "USA"
   )
   experience.user = User.all[2]
   experience.save!
