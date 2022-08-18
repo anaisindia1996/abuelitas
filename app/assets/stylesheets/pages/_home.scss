@@ -15,6 +15,15 @@
   padding-top: 70px;
 }
 
+.card-product-infos H2 {
+  font-size: 28px !important;
+  padding-bottom: 20px;
+}
+
+.container-fluid pb-5 {
+  padding-bottom: 6rem;
+}
+
 .banner p {
   font-size: 25px;
   color: white;
@@ -44,7 +53,10 @@
   padding: 45px;
   text-align: center;
   justify-content: center;
-  background-color: white;
+  // background-color: white;
+}
+.subheading-testimonials {
+  color: white;
 }
 
 .details {
@@ -65,15 +77,20 @@
 
 .bottom-picture {
   height: 100%;
-  width: 100%;
+  width: 80%;
   object-fit:cover;
-  border-radius:4px;
+  border-radius:16px;
   padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.picture-box{
+  text-align: center;
 }
 
 .chatter {
   font-weight: 500 !important;
-
+  font-size: 20px !important;
 }
 // .card-product h2 {
 //   font-size: 24px;
@@ -94,3 +111,29 @@
 //   margin-bottom: 10px;
 //   width: 50%;
 // }
+
+.container-homepage{
+  padding: 0 60px 0 60px;
+}
+
+
+.testimonial-box {
+background-color: pink;
+padding-bottom: 60px;
+}
+
+.card-product-infos {
+  padding: 36px !important;
+}
+
+.box {
+margin-bottom: 32px !important;
+margin-top: 32px !important;
+
+}
+
+
+a {
+  text-decoration: none !important;
+  margin-top: 10px;
+}
