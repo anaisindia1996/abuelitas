@@ -4,42 +4,42 @@
   <br>
   <% if @my_appointments.empty? %>
     <p class="text-center">Dear <strong><%= current_user.first_name %></strong>, you do not have any scheduled appointment at the moment.</p>
-    <% end %>
-    <div class="container">
+  <% end %>
+  <div class="container">
 
-      <div class="row">
-        <% @my_appointments.each do |appointment| %>
-          <div class="col p-3">
-            <div class="card" style="width: 18rem;">
-             <% if appointment.experience.photo.attached? %>
-              <%= cl_image_tag appointment.experience.photo.key, class: "card-img-top" %>
-                <% else %>
-              <img src= <%= appointment.experience.images %> >
-                <% end %>
-                <div class="card-body">
-                  <h5 class="card-title"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
-                  <p class="card-text">Scheduled for: <%= appointment.date %></p>
-                  <div class="d-flex gap-3 mt-2 align-items-center">
+    <div class="row">
+      <% @my_appointments.each do |appointment| %>
+        <div class="col p-3">
+          <div class="card" style="width: 18rem;">
+          <% if appointment.experience.photo.attached? %>
+            <%= cl_image_tag appointment.experience.photo.key, class: "card-img-top" %>
+              <% else %>
+            <img src= <%= appointment.experience.images %> >
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= appointment.experience.activity_name %> with <%= appointment.experience.grandma_name%></h5>
+                <p class="card-text">Scheduled for: <%= appointment.date %></p>
+                <div class="mt-2 d-block align-items-center justify-content-evenly flex-direction-column">
                   <% if appointment.Pending? %>
-                          <p class="btn-blue"><%= appointment.status %></p>
-                    <% elsif appointment.Confirmed? %>
-                          <p class="btn-green"><%= appointment.status %></p>
-                    <% elsif appointment.Declined? %>
-                          <p class="btn-red"><%= appointment.status %></p>
-                    <% end %>
+                    <p class="btn-blue"><%= appointment.status %></p>
+                  <% elsif appointment.Confirmed? %>
+                    <p class="btn-green"><%= appointment.status %></p>
+                  <% elsif appointment.Declined? %>
+                        <p class="btn-red"><%= appointment.status %></p>
+                  <% end %>
                   <%# <p class="card-text">Hosted by: <%= appointment.user.first_name</p>  %>
                   <% if Date.today > appointment.date %>
-                    <%= link_to "Review this experience", new_experience_review_path(appointment.experience), class: "btn" %>
+                    <%= link_to "Review", new_experience_review_path(appointment.experience), class: "btn flex-direction: column;" %>
                   <% else %>
 
-                  <%= link_to "Edit", edit_appointment_path(appointment) %><br>
-                  <%= link_to "Cancel", appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-                  </div>
+                  <%= link_to "Edit", edit_appointment_path(appointment), class: "d-block mt-3" %><br>
+                  <%= link_to "Cancel", appointment_path(appointment), class: "d-block", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
                   <% end %>
                 </div>
-            </div>
+              </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
+  </div>
 </div>
