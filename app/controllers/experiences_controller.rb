@@ -21,6 +21,14 @@ class ExperiencesController < ApplicationController
 
   def show
     @review = Review.new
+    @markers = [
+      {
+        lat: @experience.geocode[0],
+        lng: @experience.geocode[1],
+        info_window: render_to_string(partial: "info_window", locals: {experience: @experience }),
+        image_url: helpers.asset_url("https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660853532/6_ebqm2m.png")
+      }
+    ]
   end
 
   def new
