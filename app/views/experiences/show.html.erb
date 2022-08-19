@@ -4,7 +4,11 @@
 </div>
 
 <div class="card-product-show">
-  <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg" />
+  <% if @experience.photo.attached? %>
+    <%= cl_image_tag @experience.photo.key, class: "card-img-top" %>
+  <% else %>
+    <img src= <%= @experience.images %> >
+  <% end %>
   <div class="card-product-show-infos">
     <p><%= @experience.description %></p>
     <p><strong>$<%= @experience.price %></strong></p>
