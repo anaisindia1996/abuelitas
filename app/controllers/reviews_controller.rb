@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
   def create
     @experience = Experience.find(params[:experience_id])
     @review = Review.new(review_params)
+    @review.user = current_user
     @review.experience = @experience
 
     if @review.save
