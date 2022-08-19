@@ -50,7 +50,8 @@
               <% end %>
             </small>
             <p>
-              <%= review.content %>
+              <%= review.content %><br>
+              - <%= review.user.first_name %> <%= review.user.last_name %>
             </p>
           </li>
         <% end %>
