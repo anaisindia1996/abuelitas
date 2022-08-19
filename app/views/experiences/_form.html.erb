@@ -1,4 +1,15 @@
-        <%= simple_form_for @experience do |f| %>
+        <%= simple_form_for(experience) do |f| %>
+          <H2>Tags</H2>
+          <div id="tags">
+            <%= f.simple_fields_for :tags do |tag| %>
+              <%# <%= tag.input :collection :name %>
+              <%= render 'tag_fields', :f => tag %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association "add tag", f, :tags %>
+            </div>
+          </div>
+          <H2>EXPERIENCEEEEE</H2>
         <%= f.input :grandma_name %>
         <%= f.input :activity_name %>
         <%= f.input :description %>

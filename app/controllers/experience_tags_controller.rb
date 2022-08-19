@@ -11,7 +11,7 @@ class ExperienceTagsController < ApplicationController
 
     @tags.each do |tag|
       @experience_tag = ExperienceTag.new(experience: @experience, tag: tag)
-      render :new, status: :unprocessable_entity && return unless @experience_tag.save
+      render 'experiences/new', status: :unprocessable_entity && return unless @experience_tag.save
     end
   end
 end

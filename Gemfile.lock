@@ -97,6 +97,7 @@ GEM
     cloudinary (1.23.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
+    cocoon (1.2.15)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     debug (1.6.2)
@@ -287,6 +288,7 @@ DEPENDENCIES
   bootsnap
   capybara
   cloudinary
+  cocoon
   debug
   devise
   dotenv-rails

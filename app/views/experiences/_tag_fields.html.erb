@@ -1,0 +1,4 @@
+<div class="nested-fields">
+  <%= f.input :name, collection: Tag.all, input_html: { multiple: true }, include_hidden: false %>
+  <%= link_to_remove_association "remove tag", f %>
+</div>

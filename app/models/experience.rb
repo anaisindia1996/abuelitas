@@ -4,7 +4,9 @@ class Experience < ApplicationRecord
   has_many :appointments
 
   has_many :experience_tags, dependent: :destroy
-  has_many :tags, through: :experience_tags
+  has_many :tags
+
+  accepts_nested_attributes_for :experience_tags, :tags, reject_if: :all_blank, allow_destroy: true
 
   belongs_to :user
   geocoded_by :address

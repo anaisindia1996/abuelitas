@@ -89,3 +89,5 @@ group :test do
 end
 
 gem "devise"
+
+gem "cocoon"

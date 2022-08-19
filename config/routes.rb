@@ -17,4 +17,10 @@ Rails.application.routes.draw do
   get 'decline_appointment/:id', to: 'appointments#decline', as: :decline_appointment
 
   get 'agents-appointments', to: 'appointments#my_agent_appointments'
+
+  # TAGS
+  resources :experiences do
+    resources :experience_tags, only: [:new, :create]
+  end
+  # get 'experiences/tags/new', to: 'experience_Tags#adding_tag', as: :adding_tag
 end

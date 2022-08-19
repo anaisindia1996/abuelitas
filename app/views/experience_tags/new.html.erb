@@ -1,0 +1,10 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= simple_form_for([@experience, @experience_tag]) do |f| %>
+        <%= f.input :tag, collection: Tag.all, input_html: { multiple: true }, include_hidden: false %>
+        <%= f.submit 'Brand them', class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+</div>
