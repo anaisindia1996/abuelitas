@@ -8,8 +8,9 @@
   color: $pink;
 }
 
-.card-product {
+.card-product-show {
   overflow: hidden;
+  color: black ;
   height: 400px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -19,7 +20,7 @@
   margin: 60px;
 }
 
-.card-product img {
+.card-product-show img {
   height: 100%;
   width: 65%;
   object-fit: cover;
@@ -33,17 +34,23 @@
   color: $pink;
 }
 
-.card-product p {
-  font-size: 16px;
+.card-product-show p {
+  font-size: 18px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
+  margin-bottom: 8px;
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
+.card-product-show .card-product-show-infos {
   padding: 25px;
+  padding-top: 45px;
 }
+
+.card-product-show-infos .btn {
+  margin-top: 15px;
+}
+
 
 // .map {
 //   margin: 60px;

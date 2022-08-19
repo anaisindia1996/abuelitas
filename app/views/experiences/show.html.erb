@@ -1,22 +1,21 @@
 <div class="experience-title">
   <h1 class="text-center"><%= @experience.activity_name %> with <%= @experience.grandma_name %></h1>
   <h4 class="text-center pt-3">Hosted by <%= @experience.user.first_name %> <%= @experience.user.last_name %></h4>
-  <%# HOSTED BY 'HOST' HERE PLS NIC %>
 </div>
 
-<div class="card-product">
+<div class="card-product-show">
   <img src="https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660663917/cdc-F98Mv9O6LfI-unsplash_kqthfz.jpg" />
-  <div class="card-product-infos">
+  <div class="card-product-show-infos">
     <p><%= @experience.description %></p>
-    <p><strong></strong>$<%= @experience.price %></strong></p>
+    <p><strong>$<%= @experience.price %></strong></p>
     <p>Available everyday of the week</p>
-    <div class="btn text-center mt-4">
+    <div class="">
       <% if @experience.user == current_user %>
-        <p><%= link_to "Delete this experience", @experience, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-        <%= link_to "Back to All My Experiences", my_experiences_path %>
-        <%= link_to "Edit this experience", edit_experience_path %>
+        <p><%= link_to "Delete this experience", @experience, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline text-center" %></p>
+        <%= link_to "Back to All My Experiences", my_experiences_path, class: "btn btn-outline text-center" %>
+        <%= link_to "Edit this experience", edit_experience_path, class: "btn btn-outline text-center" %>
       <% else %>
-        <%= link_to "Book this experience", new_experience_appointment_path(@experience), class: "text-decoration-none" %>
+        <%= link_to "Book this experience", new_experience_appointment_path(@experience), class: "btn btn-outline text-center" %>
       <% end %>
     </div>
   </div>
@@ -30,7 +29,7 @@
 <div class="bg-white text-center border-top">
   <div class="container pb-5">
   <% if !@experience.reviews.empty?%>
-    <h2 class="py-5">Reviews</h2>
+    <h2 class="py-3">Reviews</h2>
   <% end %>
       <div class="list-group">
         <% @experience.reviews.each do |review| %>
