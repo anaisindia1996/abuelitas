@@ -91,3 +91,5 @@ end
 gem "devise"
 
 gem "cocoon"
+
+gem 'jquery-rails'

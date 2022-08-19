@@ -1,20 +1,20 @@
-        <%= simple_form_for(experience) do |f| %>
-          <H2>Tags</H2>
-          <div id="tags">
-            <%= f.simple_fields_for :tags do |tag| %>
-              <%# <%= tag.input :collection :name %>
-              <%= render 'tag_fields', :f => tag %>
-            <% end %>
-            <div class="links">
-              <%= link_to_add_association "add tag", f, :tags %>
-            </div>
-          </div>
-          <H2>EXPERIENCEEEEE</H2>
-        <%= f.input :grandma_name %>
-        <%= f.input :activity_name %>
-        <%= f.input :description %>
-        <%= f.input :price %>
-        <%= f.input :address %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
+<%= simple_form_for(experience) do |f| %>
+  <H2>Tags</H2>
+  <div id="tags">
+    <%= f.simple_fields_for :experience_tags do |tag| %>
+      <%= render 'experience_tag_fields', :f => tag %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add tag', f, :experience_tags, partial: 'experience_tag_fields' %>
+
+    </div>
+  </div>
+  <H2>EXPERIENCEEEEE</H2>
+  <%= f.input :grandma_name %>
+  <%= f.input :activity_name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

@@ -25,7 +25,7 @@ class ExperiencesController < ApplicationController
 
   def new
     @experience = Experience.new
-    @experience_tag = ExperienceTag.new
+    # @experience_tag = ExperienceTag.new
     @experience.experience_tags.build unless @experience.experience_tags.any?
   end
 
@@ -33,8 +33,10 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(experience_params)
     @experience.user = current_user
     if @experience.save
+      # raise
       redirect_to experience_path(@experience)
     else
+      # raise
       render :new, status: :unprocessable_entity
     end
   end
@@ -66,6 +68,6 @@ class ExperiencesController < ApplicationController
   end
 
   def experience_params
-    params.require(:experience).permit(:grandma_name, :activity_name, :description, :photo, :price, :address, experience_tags_attributes:[:id, :tag_id], tags_attributes:[:id, :name])
+    params.require(:experience).permit(:grandma_name, :activity_name, :description, :photo, :price, :address, experience_tags_attributes: [:tag_id])
   end
 end
