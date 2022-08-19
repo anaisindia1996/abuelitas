@@ -29,7 +29,7 @@
                     <% end %>
                   <%# <p class="card-text">Hosted by: <%= appointment.user.first_name</p>  %>
                   <% if Date.today > appointment.date %>
-                    <%= link_to "Review this experience", new_experience_review_path(appointment.experience), class: "btn btn-outline text-center" %>
+                    <%= link_to "Review this experience", new_experience_review_path(appointment.experience), class: "btn" %>
                   <% else %>
 
                   <%= link_to "Edit", edit_appointment_path(appointment) %><br>
