@@ -6,6 +6,7 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 // Your CSS partials
 @import "components/index";
@@ -16,6 +17,7 @@
 @import "components/form";
 @import "components/card";
 @import "components/map";
+@import "components/address_autocomplete";
 
 
 .fullpage {
