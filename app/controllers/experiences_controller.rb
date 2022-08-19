@@ -21,10 +21,17 @@ class ExperiencesController < ApplicationController
 
   def show
     @review = Review.new
+    if @experience.geocode == nil
+      latitude = 45.501690
+      longitude = -73.567253
+    else
+      latitude = @experience.geocode[0]
+      longitude = @experience.geocode[1]
+    end
     @markers = [
       {
-        lat: @experience.geocode[0],
-        lng: @experience.geocode[1],
+        lat: latitude,
+        lng: longitude,
         info_window: render_to_string(partial: "info_window", locals: {experience: @experience }),
         image_url: helpers.asset_url("https://res.cloudinary.com/dg7mx0hnl/image/upload/v1660853532/6_ebqm2m.png")
       }
