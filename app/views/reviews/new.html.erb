@@ -2,7 +2,7 @@
 <div class="half-page">
   <h1 class="pb-3 text-center">Review your experience with <%= @experience.grandma_name %></h1>
   <%= simple_form_for [@experience, @review] do |f| %>
-    <%= f.input :rating, collection: 0..5 %>
+    <%= f.input :rating, collection: 0..5, input_html: {data: {controller: "star-rating"}} %>
     <%= f.input :content %>
     <div class="text-center">
       <%= f.submit "Submit review", class: "btn" %>

@@ -21,7 +21,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @review = Review.new
-    if @experience.geocode == nil
+    if @experience.geocode.nil?
       latitude = 45.501690
       longitude = -73.567253
     else
