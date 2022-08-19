@@ -123,3 +123,49 @@ margin-top: 20px !important;
 .card-trip-pricing {
   text-align: center;
 }
+
+
+//showpage card
+.card-product-show {
+  overflow: hidden;
+  color: black ;
+  height: 400px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0%;
+  margin: 60px;
+}
+
+.card-product-show img {
+  height: 100%;
+  width: 65%;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 5px;
+  color: $pink;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.card-product-show p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.card-product-show .card-product-show-infos {
+  padding: 25px;
+  padding-top: 45px;
+}
+
+.card-product-show-infos .btn {
+  margin-top: 15px;
+}
